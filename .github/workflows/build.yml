@@ -21,10 +21,15 @@ jobs:
         with:
           repository: MetaCubeX/Dashboard
           
+      - name: Install
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+
       - name: Build
         uses: borales/actions-yarn@v2.3.0
         with:
-          cmd: build # will run `yarn build` command
+          cmd: build
 
       - name: debug
         run: |
