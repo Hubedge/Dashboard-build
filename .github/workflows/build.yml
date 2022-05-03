@@ -31,8 +31,12 @@ jobs:
         with:
           cmd: build
 
-      - name: debug
+      - name: Package
         run: |
-          ls -l
-          cd public
-          ls -l
+          tar -czvf Dashboard-for-Meta.tar.gz public
+
+      - name: Upload
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          path: "*.tar.gz"
+          retention-days: 90
